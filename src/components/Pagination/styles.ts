@@ -11,16 +11,14 @@ export const Container = styled.div`
   }
   span {
     text-transform: uppercase;
-    color: #2c3e50;
+    color: ${props => props.theme.colors.text};
     font-weight: bold;
     font-size: 12px;
     letter-spacing: 0.3em
   }
   svg {
-    fill: rgba(44, 62, 80, 0.5);
+    fill: ${props => props.theme.colors.text};
     transition: all 0.25s ease-in-out;
-    &:hover {
-      fill: rgba(44, 62, 80, 1);
-    }
+    
   }
 `;

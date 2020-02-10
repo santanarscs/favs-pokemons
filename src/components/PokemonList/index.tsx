@@ -10,8 +10,8 @@ const PokemonList = (props: any) => {
       {pokemons.map((pokemon: IPokemon) => <section key={pokemon.id}>
         <img src={`https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`} alt={pokemon.name}/>
         <h3>{pokemon.name}</h3>
-        <AddButton onClick={() => handleAddPokemon(state, dispatch, pokemon)} isFav={favPokemon.includes(pokemon)}>
-          {favPokemon.find((pok: IPokemon) => pok.id === pokemon.id) ? <FaHeart size={25} /> : <FaRegHeart size={25}/>}
+        <AddButton onClick={() => handleAddPokemon(state, dispatch, pokemon)} >
+          {favPokemon.find((pok: IPokemon) => pok.id === pokemon.id) ? <FaHeart size={20} /> : <FaRegHeart size={20}/>}
         </AddButton>
       </section>)}
     </Container>

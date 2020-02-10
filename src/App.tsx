@@ -1,14 +1,14 @@
 import React from 'react'
 import { ThemeProvider, DefaultTheme } from 'styled-components'
-import { Store } from './Store'
-import { Link } from '@reach/router'
 import {Container } from './style'
 import usePersistedState from './utils/usePersistedState'
 import light from './styles/themes/light'
 import dark from './styles/themes/dark'
 import Header from './components/Header'
+import GlobalStyle from './styles/global'
+
 const App = (props: any): JSX.Element => {
-  const { state } = React.useContext(Store)
+  
   const [ theme, setTheme ] = usePersistedState<DefaultTheme>('theme', light)
 
   const toggleTheme = () => {
@@ -16,6 +16,8 @@ const App = (props: any): JSX.Element => {
   }
   return (
     <ThemeProvider theme={theme}>
+    <GlobalStyle />
+
     <Container>
       <Header toggleTheme={toggleTheme} />
       {/* <Header>

@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-type Props = {
-  isFav: boolean
-}
+
 export const Container = styled.div`
   max-width: 900px;
   display: grid;
@@ -11,9 +9,9 @@ export const Container = styled.div`
   section {
     position: relative;
     padding: 20px;
-    /* border: 1px solid #ccc; */
     border-radius: 4px;
     display: flex;
+    background: ${props => props.theme.colors.backgroundCard};
     flex-direction: column;
     justify-content:center;
     align-items:center;
@@ -23,7 +21,7 @@ export const Container = styled.div`
       text-transform: uppercase;
       font-size: 16px;
       line-height: 1.3em;
-      color: #b3b3b3;
+      color: ${props => props.theme.colors.text};
       margin-top: 5px;
     }
     img {
@@ -42,12 +40,12 @@ export const AddButton = styled.button`
   background: none;
   position: absolute;
   top: 10px;
-  left: 180px;
+  left: 185px;
   svg {
-    fill: ${(props:Props) => props.isFav ? 'rgba(255, 0, 0, 0.8)' :'rgba(255, 0, 0, 0.2)'};
+    fill: ${props => props.theme.colors.heart};
     transition: all 0.25s ease-in-out;
     &:hover {
-      fill: rgba(255, 0, 0, 0.8);
+      transform: scale(1.2)
     }
   }
 `;

@@ -5,7 +5,9 @@ export default {
     primary: '#3498db',
     secondary: '#1abc9c',
     background: '#f5f5f5',
-    text: '#333'
+    text: '#333',
+    heart: '#e74c3c',
+    backgroundCard: '#fff'
   }
 
 }

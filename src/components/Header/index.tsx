@@ -1,8 +1,10 @@
 import React from 'react'
 import Switch from 'react-switch'
+import { Store } from '../../Store'
 import {ThemeContext} from 'styled-components'
 import {shade} from 'polished'
 import  { Container } from './styles'
+import { Link } from '@reach/router'
 
 
 interface Props {
@@ -10,10 +12,15 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({toggleTheme}) => {
+  const { state } = React.useContext(Store)
   const { title, colors } = React.useContext(ThemeContext)
   return (
     <Container>
-      Heeader
+      <Link to="/"><h1>Pokemons</h1></Link>
+      <div>
+      <nav>
+          <Link to='/faves'>Favourites: ({state.favPokemon.length}) </Link>
+        </nav>
       <Switch 
         onChange={toggleTheme}
         checked={title === 'dark'} 
@@ -26,6 +33,7 @@ const Header: React.FC<Props> = ({toggleTheme}) => {
         onColor={colors.secondary}
 
       />
+      </div>
     </Container>
   )
 }
