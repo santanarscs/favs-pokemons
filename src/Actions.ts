@@ -1,9 +1,6 @@
 import { IAction, IPokemon, IState} from './interfaces'
 import axios from 'axios';
 export const fetchDataAction = async (dispatch: any, url: string = 'http://pokeapi.co/api/v2/pokemon') => {
-dispatch({
-  type: 'FETCH_DATA_REQUEST',
-})  
 const runAsyncFunctions = async () => {
     const response = await axios.get(url);
     const teste =  await Promise.all(
